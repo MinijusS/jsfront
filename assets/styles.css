@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+body h4 {
+  font-size: 20px;
+}
+body .container {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+body input {
+  padding: 5px;
+  border: 1px solid #2d3436;
+  outline: none;
+  font-size: 20px;
+}
+body input:focus:valid {
+  border: solid 2px green;
+}
+body input:focus:invalid {
+  border: solid 2px red;
+}
+body input[name=edit] {
+  margin-top: 50px;
+  display: none;
+}
+body ul {
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+}
+body ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  text-align: left;
+  width: 100%;
+  font-size: 16px;
+}
+body ul li button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+body ul li .buttons {
+  display: flex;
+}
+body ul li .buttons > * {
+  margin-left: 5px;
+}
+body ul li .delete {
+  background-color: #e74c3c;
+  color: white;
+}
+body ul li .edit {
+  background-color: #0984e3;
+  color: white;
+}
+body ul li:nth-child(even) {
+  background-color: #e6e6e6;
+}
+body ul li:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+body .deleteTransition {
+  opacity: 0;
+  transition: 2s;
+  transform: translate(250%);
+}
+
+/*# sourceMappingURL=styles.css.map */

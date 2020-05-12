@@ -1,20 +1,33 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>JS Basics</title>
-    <link rel="stylesheet" href="assets/styles.css">
-    <script src='script.js' defer></script>
+  <meta charset="UTF-8">
+  <title>Events</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
-    <div class="container">
-        <input type="text" name="name" required autocomplete="off">
-        <h4>TODO List:</h4>
-        <ul>
+  <main class="chat-container">
 
-        </ul>
-        <input type="text" name="edit" required autocomplete="off">
-    </div>
+    <article class="message self">
+      <section class="image"></section>
+      <section class="chat-bubble">
+        <p>Lorem ipsum dolor</p>
+      </section>
+    </article>
+
+    <article class="message contact">
+      <section class="image"></section>
+      <section class="chat-bubble">
+        <p>Lorem ipsum dolor</p>
+        <p>Lorem ipsum dolor sit</p>
+      </section>
+    </article>
+
+  </main>
+  <div class="message-container">
+    <textarea></textarea>
+    <button>Send</button>
+  </div>
 </body>
-
 </html>

@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  margin: 50px auto;
+}
+
+/* message box */
+
+.message {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  transition: 0.3s ease-in-out;
+}
+
+.message:hover {
+  transform: translateX(15px);
+}
+
+.message.self:hover {
+  transform: translateX(-15px);
+}
+
+.message.self {
+  flex-direction: row-reverse;
+}
+
+.message:last-child {
+  margin-bottom: 0;
+}
+
+/* image */
+
+.image {
+  flex-shrink: 0;
+  position: relative;
+  margin-right: 30px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: top;
+}
+
+.message.contact .image {
+  background-image: url('https://i.pinimg.com/originals/3f/66/c3/3f66c309c4eb74a8668bb4478ae21751.jpg');
+}
+
+.message.self .image {
+  background-image: url('https://i.pinimg.com/originals/de/a1/2f/dea12f81803aeca231f6eb1b39611efe.jpg');
+}
+
+.message.self .image {
+  margin-left: 30px;
+  margin-right: 0;
+}
+
+.message.self .image:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.4);
+  background-image: url('https://cdn0.iconfinder.com/data/icons/set-app-incredibles/24/Image-01-512.png');
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 50%;
+  opacity: 0;
+  cursor: pointer;
+  transition-duration: .2s;
+}
+
+.message.self .image:hover:after {
+  opacity: 1;
+}
+
+/* chat bubble */
+
+.chat-bubble {
+  position: relative;
+  background-color: #dddddd;
+  padding: 20px;
+  border-radius: 20px 20px 20px 0;
+}
+
+.message.self .chat-bubble {
+  background-color: #3bc06f;
+  border-radius: 20px 20px 0 20px;
+}
+
+.chat-bubble:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 13px;
+  height: 13px;
+  background-color: #dddddd;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.message.self .chat-bubble:before {
+  left: initial;
+  right: 0;
+  background-color: #3bc06f;
+  transform: translate(50%, -50%) rotate(45deg);
+}
+
+.chat-bubble p {
+  font-family: sans-serif;
+  font-size: 15px;
+  line-height: 1.3em;
+}
+
+.message.self .chat-bubble p {
+  color: #fff;
+}
+
+.chat-bubble p:first-of-type {
+  margin-top: 0;
+}
+
+.chat-bubble p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* MESSAGE CONTAINER */
+
+.message-container {
+  max-width: 450px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  resize: none;
+  border: 1px solid #eaeaea;
+  border-radius: 20px;
+  outline: none;
+  padding: 1em;
+  position: relative;
+}
+
+button {
+  margin-top: 10px;
+  background-color: rgb(80, 140, 220);
+  color: white;
+  padding: 1em 3em;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: rgb(70, 100, 200);
+}

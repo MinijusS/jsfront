@@ -1,22 +1,46 @@
 'use strict';
+const selectedCar = document.querySelector('.car');
 
-document.addEventListener('mouseleave', () => {
-    togglePopup();
-}, {once: true});
+const car = {
+    positionX: 0,
+    positionY: 0,
+    rotation: 0,
 
-function togglePopup() {
-    const popup = document.querySelector('.popup');
-    const close = document.querySelector('.close-btn');
-    
-    popup.style.display = 'flex';
-
-    addEventListener('click', e => {
-        if(!e.target.closest('.popup')) {
-            popup.style.display = 'none';
+    moveLeft() {
+        this.positionX -= 10;
+    },
+    moveRight() {
+        this.positionX += 10;
+    },
+    moveUp() {
+        this.positionY -= 10;
+    },
+    moveDown() {
+        this.positionY += 10;
+    },
+    render() {
+        selectedCar.style.left = this.positionX + 'px';
+        selectedCar.style.top = this.positionY + 'px';
+    },
+    move(e) {
+        switch (e.keyCode) {
+            case 40:
+                this.moveDown();
+                break;
+            case 39:
+                this.moveRight();
+                break;
+            case 38:
+                this.moveUp();
+                break;
+            case 37:
+                this.moveLeft();
+                break;
         }
-    });
+    }
+};
 
-    close.addEventListener('click', () => {
-        popup.style.display = 'none';
-    });
-}
+document.addEventListener('keydown', e => {
+    car.move(e);
+    car.render();
+});

@@ -1,6 +1,6 @@
-const body = document.querySelector('body');
+'use strict';
 
-body.addEventListener('mouseleave', () => {
+document.addEventListener('mouseleave', () => {
     togglePopup();
 }, {once: true});
 
@@ -11,7 +11,7 @@ function togglePopup() {
     popup.style.display = 'flex';
 
     addEventListener('click', e => {
-        if(e.target.closest('.popup') === null) {
+        if(!e.target.closest('.popup')) {
             popup.style.display = 'none';
         }
     });
